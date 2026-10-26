@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Qibla Finder — Find the Qibla Direction from Anywhere | اتجاه القبلة | S3eidat Tools</title>
+<meta name="description" content="Find the Qibla direction (bearing to the Kaaba) from your location or any city, with a live phone compass, degrees from north and distance to Makkah. Arabic and English. Private: your location stays on your device.">
+<meta property="og:title" content="Qibla Finder — اتجاه القبلة">
+<meta property="og:description" content="Qibla direction with a live compass and degrees from north. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="qibla-finder">
+<main class="s3-main" id="main">
+  <section class="s3-hero">
+    <div class="row between">
+      <h1 data-t="title">Qibla Finder</h1>
+      <div class="seg" id="lang" role="group" aria-label="Language / اللغة">
+        <button aria-pressed="true" data-v="en">English</button>
+        <button aria-pressed="false" data-v="ar">العربية</button>
+      </div>
+    </div>
+    <p data-t="intro">The direction of the Kaaba in Makkah from wherever you are, as degrees from north, with a live compass on phones. Your location is used only on this device.</p>
+  </section>
+
+  <div class="grid-2 qf-grid">
+    <section class="card compass-card" id="compassCard">
+      <div class="compass-wrap">
+        <svg class="compass" id="compass" viewBox="-160 -160 320 320" role="img" aria-labelledby="bearingBig">
+          <g id="dial"></g>
+          <path class="device" d="M0 -158 L-9 -142 L9 -142 Z"></path>
+        </svg>
+      </div>
+      <div class="center">
+        <div class="bearing" id="bearingBig">—</div>
+        <div class="muted" id="status" aria-live="polite"></div>
+      </div>
+      <div class="row center-row mt">
+        <button class="btn primary" id="live"><span data-t="startCompass">Start live compass</span></button>
+      </div>
+      <p class="faint center" id="compassNote" data-t="compassNote">On a phone: hold it flat, top edge pointing ahead. Move it in a figure-8 if the reading looks wrong.</p>
+    </section>
+
+    <div class="stack">
+      <section class="card">
+        <h2 data-t="location">Your location</h2>
+        <div class="row">
+          <button class="btn" id="geo"><span data-t="useLoc">Use my location</span></button>
+          <label class="field grow"><span data-t="city">City</span><select class="select" id="city"></select></label>
+        </div>
+        <div class="grid-2 mt">
+          <label class="field"><span data-t="lat">Latitude</span><input class="input" id="lat" type="number" step="0.0001" min="-90" max="90" inputmode="decimal"></label>
+          <label class="field"><span data-t="lon">Longitude</span><input class="input" id="lon" type="number" step="0.0001" min="-180" max="180" inputmode="decimal"></label>
+        </div>
+      </section>
+      <section class="card">
+        <div class="stats" id="stats"></div>
+        <p class="explain" id="explain"></p>
+        <p class="faint" data-t="trueNorth">Degrees are from true north. A magnetic compass points to magnetic north, which can differ by a few degrees depending on where you are.</p>
+        <button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg><span data-t="copy">Copy</span></button>
+      </section>
+    </div>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

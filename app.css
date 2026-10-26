@@ -1,0 +1,25 @@
+.qf-grid { align-items: start; }
+.center-row { justify-content: center; }
+.compass-wrap { width: min(100%, 380px); margin: 4px auto 10px; }
+.compass { width: 100%; height: auto; display: block; overflow: visible; }
+#dial { transition: transform 120ms linear; }
+.compass .face { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 2; }
+.compass .tick { stroke: var(--text-3); stroke-width: 1; }
+.compass .tick.major { stroke: var(--text-2); stroke-width: 2; }
+.compass .lbl { fill: var(--text-2); font: 700 16px var(--font); text-anchor: middle; dominant-baseline: central; }
+.compass .lbl.n { fill: var(--danger); }
+.compass .deg { fill: var(--text-3); font: 500 9px var(--font); text-anchor: middle; dominant-baseline: central; }
+.compass .arrow { fill: var(--accent); filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--accent) 50%, transparent)); }
+.compass .kaaba rect { fill: #14171b; stroke: var(--coffee); stroke-width: 2; }
+.compass .kaaba line { stroke: var(--coffee); stroke-width: 2; }
+.compass .hub { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.compass .device { fill: var(--text); }
+.compass-card.aligned .face { stroke: var(--ok); stroke-width: 5; }
+.compass-card.aligned .bearing { color: var(--ok); }
+.bearing { font-size: 44px; font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.center { text-align: center; }
+#stats { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+#stats .stat b { font-size: 22px; }
+.explain { font-size: 15px; line-height: 1.6; margin: 14px 0 6px; }
+.explain b { color: var(--accent); }
+#geo { align-self: flex-end; }
